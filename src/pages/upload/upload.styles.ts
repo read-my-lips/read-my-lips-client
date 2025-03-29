@@ -11,3 +11,11 @@ export const card = {
     flexDirection: 'column',
     alignItems: 'center',
 }
+
+export const buttons = {
+    display: 'flex',
+    gap: '1rem',
+    marginTop: '1rem',
+    justifyContent: 'center',
+    alignItems: 'center',
+}
