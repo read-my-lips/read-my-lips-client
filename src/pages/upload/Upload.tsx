@@ -4,6 +4,7 @@ import * as styles from './upload.styles';
 import { styled } from '@mui/material/styles';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { useNavigate } from "react-router-dom";
+import { sendVideo } from "../../services/videoService";
 
 const UploadVideo = () => {
     const [video, setVideo] = useState<File | null>(null);
@@ -19,6 +20,12 @@ const UploadVideo = () => {
             alert("Please select a valid video file.");
         }
     };
+
+    const sendVideoForPrediction = async (video: File) => {
+        sendVideo(video).then((prediction) => {
+                navigate('/prediction', { state: { prediction } });
+            })
+    }
 
     const VisuallyHiddenInput = styled('input')({
         clip: 'rect(0 0 0 0)',
@@ -59,7 +66,7 @@ const UploadVideo = () => {
                     {video && <Button
                         component="label"
                         variant="contained"
-                        onClick={() => navigate('/prediction')}
+                        onClick={() => sendVideoForPrediction(video)}
                     >
                         Send For Prediction
                     </Button>}
