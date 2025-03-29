@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material"
+import { Box, Button, Card } from "@mui/material"
 import { useState } from "react";
 import * as styles from './uploadVideo.styles';
 import { styled } from '@mui/material/styles';
@@ -32,6 +32,7 @@ const UploadVideo = () => {
 
     return (
         <Box sx={styles.container}>
+            <Card sx={styles.card}>
             {video && (<>
                 {previewUrl && <video controls src={previewUrl} width="300" />}
                 <Box sx={{ marginTop: '1rem' }}>
@@ -54,7 +55,7 @@ const UploadVideo = () => {
                     multiple
                 />
             </Button>
-
+            </Card>
         </Box>
     )
 }
