@@ -1,12 +1,19 @@
 import { Route, Routes } from "react-router-dom";
-import UploadVideo from "../pages/upload-video/UploadVideo";
 import Layout from "../layout/Layout";
+import { routes } from "./routes";
 
 const Router = () => {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
-                <Route index element={<UploadVideo />} />
+                {routes.map((route, index) => (
+                    <Route
+                        key={index}
+                        index={!route.exact}
+                        path={route.path}
+                        element={<route.component />}
+                    />
+                ))}
             </Route>
         </Routes>
     )
