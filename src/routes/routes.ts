@@ -9,9 +9,9 @@ export const routes = [
         component: UploadVideo,
     },
     {
-        path: "/mor",
+        path: "/prediction",
         exact: true,
-        name: "Mor",
+        name: "Prediction",
         component: Prediction,
     },
 ]
