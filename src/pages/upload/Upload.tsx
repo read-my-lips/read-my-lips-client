@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { useNavigate } from "react-router-dom";
 
-const FILE_TYPE = "video/"; 
+const FILE_TYPE = "video/";
 
 const UploadVideo = () => {
     const [video, setVideo] = useState<File | null>(null);
@@ -30,7 +30,7 @@ const UploadVideo = () => {
         <Box sx={styles.container}>
             <Typography variant="h4" sx={{ marginBottom: '1rem' }}>
                 Here you can upload your video for prediction
-                </Typography>
+            </Typography>
             <Card sx={styles.card}>
                 {video && (<>
                     {previewUrl && <video controls src={previewUrl} width="300" />}
