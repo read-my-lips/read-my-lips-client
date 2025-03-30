@@ -53,7 +53,6 @@ const UploadVideo = () => {
                             type="file"
                             accept="video/*"
                             onChange={handleFileChange}
-                            multiple
                         />
                     </Button>
                     {video && <Button
