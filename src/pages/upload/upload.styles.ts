@@ -3,6 +3,8 @@ import { SxProps } from "@mui/material";
 export const container: SxProps = {
   flexGrow: 1,
   display: "flex",
+  flexDirection: "column",
+  gap: "1rem",
   justifyContent: "center",
   alignItems: "center",
 };
