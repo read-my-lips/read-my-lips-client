@@ -9,24 +9,24 @@ const TopBar = () => {
     const navigate = useNavigate();
 
     return (
-        <AppBar position="static" sx={{ flexGrow: 1, bgcolor: 'white' }}>
-        <Toolbar>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Typography variant='h4' sx={{ color: 'black' }}>
-                    Read My Lips
-                </Typography>
-            </Box>
-            <Box sx={{ marginInlineStart: 'auto', display: 'flex', flexDirection: 'row-reverse' }}>
-                {routes.map((route, index) => (
-                    <Button key={index} sx={{ marginInline: '1rem'}} onClick={() => navigate(route.path)}>
-                    <Typography variant='h6' sx={{ color: 'black' }} >
-                        {route.name}
+        <AppBar position='sticky' sx={{ flexGrow: 1, bgcolor: 'white' }}>
+            <Toolbar>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Typography variant='h4' sx={{ color: 'black' }}>
+                        Read My Lips
                     </Typography>
-                    </Button>
-                ))}
-            </Box>
-        </Toolbar>
-    </AppBar>
+                </Box>
+                <Box sx={{ marginInlineStart: 'auto', display: 'flex', flexDirection: 'row-reverse' }}>
+                    {routes.map((route, index) => (
+                        <Button key={index} sx={{ marginInline: '1rem' }} onClick={() => navigate(route.path)}>
+                            <Typography variant='h6' sx={{ color: 'black' }} >
+                                {route.name}
+                            </Typography>
+                        </Button>
+                    ))}
+                </Box>
+            </Toolbar>
+        </AppBar>
     )
 }
 
