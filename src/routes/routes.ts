@@ -1,5 +1,5 @@
 import Prediction from "../pages/prediction/Prediction";
-import UploadVideo from "../pages/upload-video/UploadVideo";
+import UploadVideo from "../pages/upload/Upload";
 
 export const routes = [
     {
