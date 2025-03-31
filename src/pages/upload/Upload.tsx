@@ -1,10 +1,12 @@
-import { Box, Button, Card } from "@mui/material"
+import { Box, Button, Card, Typography } from "@mui/material"
 import { useState } from "react";
 import * as styles from './upload.styles';
 import { styled } from '@mui/material/styles';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { useNavigate } from "react-router-dom";
 import { sendVideo } from "../../services/videoService";
+
+const FILE_TYPE = "video/";
 
 const UploadVideo = () => {
     const [video, setVideo] = useState<File | null>(null);
@@ -13,7 +15,7 @@ const UploadVideo = () => {
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
-        if (file && file.type.startsWith("video/")) {
+        if (file && file.type.startsWith(FILE_TYPE)) {
             setVideo(file);
             setPreviewUrl(URL.createObjectURL(file)); // Generate preview URL
         } else {
@@ -28,19 +30,14 @@ const UploadVideo = () => {
     }
 
     const VisuallyHiddenInput = styled('input')({
-        clip: 'rect(0 0 0 0)',
-        clipPath: 'inset(50%)',
-        height: 1,
-        overflow: 'hidden',
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        whiteSpace: 'nowrap',
-        width: 1,
+        display: 'none',
     });
 
     return (
         <Box sx={styles.container}>
+            <Typography variant="h4" sx={{ marginBottom: '1rem' }}>
+                Here you can upload your video for prediction
+            </Typography>
             <Card sx={styles.card}>
                 {video && (<>
                     {previewUrl && <video controls src={previewUrl} width="300" />}
@@ -58,9 +55,8 @@ const UploadVideo = () => {
                         {video ? "Replace video" : "Upload video"}
                         <VisuallyHiddenInput
                             type="file"
-                            accept="video/*"
+                            accept={`${FILE_TYPE}*`}
                             onChange={handleFileChange}
-                            multiple
                         />
                     </Button>
                     {video && <Button

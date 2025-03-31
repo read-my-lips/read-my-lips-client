@@ -1,21 +1,25 @@
-export const container = {
-    flexGrow: 1,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-} 
+import { SxProps } from "@mui/material";
 
-export const card = {
-    padding: '2rem',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-}
+export const container: SxProps = {
+  flexGrow: 1,
+  display: "flex",
+  flexDirection: "column",
+  gap: "1rem",
+  justifyContent: "center",
+  alignItems: "center",
+};
 
-export const buttons = {
-    display: 'flex',
-    gap: '1rem',
-    marginTop: '1rem',
-    justifyContent: 'center',
-    alignItems: 'center',
-}
+export const card: SxProps = {
+  padding: "2rem",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+};
+
+export const buttons: SxProps = {
+  display: "flex",
+  gap: "1rem",
+  marginTop: "1rem",
+  justifyContent: "center",
+  alignItems: "center",
+};
