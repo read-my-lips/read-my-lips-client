@@ -9,7 +9,7 @@ const TopBar = () => {
     const navigate = useNavigate();
 
     return (
-        <AppBar sx={{ bgcolor: 'white' }}>
+        <AppBar position='sticky' sx={{ flexGrow: 1, bgcolor: 'white' }}>
             <Toolbar>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Typography variant='h4' sx={{ color: 'black' }}>
