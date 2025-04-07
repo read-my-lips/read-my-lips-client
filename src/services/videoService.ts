@@ -1,6 +1,11 @@
 import api from "./api";
 
-export const sendVideo = async (video: File): Promise<{ message: string }> => {
+type UploadVideoResponse = {
+  filename: string; 
+  predicted_text: string;
+};
+
+export const sendVideo = async (video: File): Promise<UploadVideoResponse> => {
   const formData = new FormData();
   formData.append("video", video); // Key should match backend field name
 

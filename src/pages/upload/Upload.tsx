@@ -25,7 +25,7 @@ const UploadVideo = () => {
 
     const sendVideoForPrediction = async (video: File) => {
         sendVideo(video).then((prediction) => {
-                navigate('/prediction', { state: { prediction } });
+                navigate('/prediction', { state: { prediction: prediction.predicted_text } });
             })
     }
 
