@@ -9,17 +9,17 @@ const TopBar = () => {
     const navigate = useNavigate();
 
     return (
-        <AppBar position='sticky' sx={{ bgcolor: 'white' }}>
+        <AppBar position='sticky'>
             <Toolbar>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography variant='h4' sx={{ color: 'black' }}>
+                    <Typography variant='h4'>
                         Read My Lips
                     </Typography>
                 </Box>
                 <Box sx={{ marginInlineStart: 'auto', display: 'flex', flexDirection: 'row-reverse' }}>
                     {routes.map((route, index) => (
                         <Button key={index} sx={{ marginInline: '1rem' }} onClick={() => navigate(route.path)}>
-                            <Typography variant='subtitle2' sx={{ color: 'black' }} >
+                            <Typography variant='subtitle2' sx={{ color: 'white' }}>
                                 {route.name}
                             </Typography>
                         </Button>
