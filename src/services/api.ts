@@ -1,9 +1,13 @@
 import axios from "axios";
+import { ENVIRONMENT } from "../config/environment";
 
-const API_BASE_URL = "http://localhost:8000/"; // Change this to your backend URL
+// console.log("ENVIRONMENT", ENVIRONMENT);
+// const API_BASE_URL = `${ENVIRONMENT.backend_url}`;
+const API_BASE_URL = `http://read-my-lips.cs.colman.ac.il:8000`;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
+  
   headers: {
     "Content-Type": "application/json",
   },
