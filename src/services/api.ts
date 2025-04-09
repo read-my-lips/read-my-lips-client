@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ENVIRONMENT } from "../config/environment";
+// import { ENVIRONMENT } from "../config/environment";
 
 // console.log("ENVIRONMENT", ENVIRONMENT);
 // const API_BASE_URL = `${ENVIRONMENT.backend_url}`;
