@@ -25,8 +25,9 @@ const UploadVideo = () => {
 
     const sendVideoForPrediction = async (video: File) => {
         sendVideo(video).then((prediction) => {
-                navigate('/prediction', { state: { prediction: prediction.predicted_text } });
-            })
+            console.log(prediction)
+            navigate('/prediction', { state: { prediction: prediction.predicted_text } });
+        }).catch(err => console.log(err))
     }
 
     const VisuallyHiddenInput = styled('input')({
