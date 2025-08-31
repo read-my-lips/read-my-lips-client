@@ -27,7 +27,10 @@ const UploadVideo = () => {
         sendVideo(video).then((prediction) => {
             console.log(prediction)
             navigate('/prediction', { state: { prediction: prediction.predicted_text } });
-        }).catch(err => console.log(err))
+        }).catch(err => {
+            console.log('An error occured while processing the http request')
+            console.log(err)
+        })
     }
 
     const VisuallyHiddenInput = styled('input')({

@@ -7,7 +7,7 @@ type UploadVideoResponse = {
 
 export const sendVideo = async (video: File): Promise<UploadVideoResponse> => {
   const formData = new FormData();
-  formData.append("video", video); // Key should match backend field name
+  formData.append("file", video); // Key should match backend field name
 
   const response = await api.post("/upload", formData, {
     headers: {
